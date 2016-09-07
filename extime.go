@@ -28,7 +28,7 @@ func main() {
 		tDiff := tEnd.Sub(tStart)
 		fmt.Println(string(out))
 		fmt.Println()
-		fmt.Println("Execution time: " + tDiff.String())
+		fmt.Println("Execution time: ", tDiff)
 	} else {
 		fmt.Println("Error executing command")
 		fmt.Println(err)
