@@ -22,13 +22,12 @@ func main() {
 
 	tStart := time.Now()
 	out, err := exec.Command(args[0], strings.TrimSpace(mArgs)).Output()
-	tEnd := time.Now()
 
 	if err == nil {
-		tDiff := tEnd.Sub(tStart)
+		tDiff := time.Since(tStart)
 		fmt.Println(string(out))
 		fmt.Println()
-		fmt.Println("Execution time: " + tDiff.String())
+		fmt.Println("Execution time: ", tDiff)
 	} else {
 		fmt.Println("Error executing command")
 		fmt.Println(err)
